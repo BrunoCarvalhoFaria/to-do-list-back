@@ -1,7 +1,6 @@
 const Task = require("../models/Task");
 
-const getAllTasks = async (req, res) => {
-  console.log(req.query);
+const getAllTasks = async (req, res) => {  
   if(req.query.name){
     req.query.name = {
       $regex: req.query.name,

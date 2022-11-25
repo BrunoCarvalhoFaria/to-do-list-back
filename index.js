@@ -15,12 +15,13 @@ var allowCrossDomain = function(req, res, next) {
   res.header('Access-Control-Allow-Headers', 'Content-Type');
   next();
 }
-app.set("view engine", "ejs");
+// app.set("view engine", "ejs");
+// app.use(express.static(path.join(__dirname, "public")));
 //app.use(bodyParser.json({limit: '100mb'}))]
 app.use(express.json())
 app.use(allowCrossDomain);
 
-//app.use(express.static(path.join(__dirname, "public")));
+
 app.use(express.urlencoded())
 app.use(routes)
 
